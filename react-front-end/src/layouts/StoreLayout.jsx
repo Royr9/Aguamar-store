@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { NavLink, Navigate, Outlet } from 'react-router-dom'
 import { useLoaderData } from 'react-router-dom';
-import banner from "/Users/roy/Development/Projects/Aguamar/react-front-end/src/images/banner.jpg";
+import ProductCard from '../components/ProductCard';
 
 
 export default function StoreLayout() {
@@ -9,52 +9,54 @@ export default function StoreLayout() {
   const featuredSuits = useLoaderData();
   console.log(featuredSuits);
 
-  const [userLog , setUserLog] = useState(true);
+  // const [userLog , setUserLog] = useState(true);
 
-    function logOut() {
-      setUserLog(false);
-      console.log(userLog);
-    }
+  //   function logOut() {
+  //     setUserLog(false);
+  //     console.log(userLog);
+  //   }
 
-  if (userLog === false) {
-   return <Navigate to="/" replace={true}/>
-  }
+  // if (userLog === false) {
+  //  return <Navigate to="/" replace={true}/>
+  // }
   return (
     <div className='StoreLayout'> 
-    <h1>Store</h1>
+    <section id='store-title-section'>
+    <h1 className='store-title-content'>Store</h1>
+    <div className='store-title-img'></div>
+    </section>
    
+    <section id='featured-swimsuits-section'>
+    <div className='featured-title'>
+    <h1> Featured bathing suits </h1>
+    </div>
+    
+    
+    {featuredSuits.map((suit)=> {
+      return( <ProductCard
+        key={suit.title}
+        title={suit.title}
+        print={suit.print}
+        price={suit.price}
+      />)
+      
+    })}
+
+    </section>
+    
 
     <NavLink  to={"men"}> <button className="btn btn-info"> Men</button></NavLink>
     <NavLink  to={"women"}><button className="btn btn-danger"> Women</button></NavLink>
-    <button onClick={logOut} className='btn' style={{background: "green"}}>Logout</button>
+
     
 
-    <nav>
-
-      
-    </nav>
    
-    <section className='featured'>
-    <img src={banner} alt="" />
-    <h2> Featured bathing suits </h2>
-    </section>
+ 
 
    
 
     
-    <div className='featured-swimsuits'>
-    {featuredSuits.map((suit)=> {
-      return(<div className='featured-suit' key={suit.id}> 
-      <h1>{suit.title}</h1>
-      <h2>{suit.print}</h2>
-      <p> {suit.price}</p>
-      </div>)
-      
-    })}
-      
     
-
-    </div>
 
     <main>
         <Outlet/>

@@ -37,6 +37,18 @@ a{
   color: #070707;
 }
 
+
+
+
+/* ********** */
+
+/********************************* custom defined elements ******************************/
+
+/* all page dynamic responsive container  */
+.page-container{
+ margin-top: 6rem ;
+}
+
 .btn:hover{
   background-color: rgb(131, 183, 168);
   color: #fff;
@@ -48,16 +60,19 @@ a{
   box-shadow: 2px black;
 }
 
-/* ********** */
-
-/********************************* custom defined elements ******************************/
-
-/* all page dynamic responsive container  */
-.page-container{
- margin-top: 6rem ;
- 
-
+.product-card{
+border: solid 1px;
+width: 400px;
+max-width: 400px ;
 }
+
+.product-card > img{
+max-height: 400px;
+object-fit: contain;
+margin-bottom: 1rem;
+}
+
+
 
 /******************************************* navbar *************************************************************/
 
@@ -189,9 +204,9 @@ justify-content: center;
 margin-bottom: 5rem;
 }
 
-.shop-now-btn > button{
-  padding: 1rem 2rem;
-  font-size: larger;
+.shop-now-btn button{
+  padding: 0.7rem 3rem;
+  font-size: x-large;
   background-color: var(--primary);
 }
 
@@ -238,6 +253,66 @@ margin-bottom: 5rem;
 
 
 /** end /** end ** *//** end ** *//** end ** *//** end ** *//** end ** /** end ** */
+
+/************** Store layout page  *******************************/
+
+/* store-title-section (grid)*/
+#store-title-section{
+  background-color: #979797;
+  display: grid;
+  height: 60vh;
+  grid-template-columns: 1.2fr minmax(700px ,1.8fr);
+  grid-row: auto;
+}
+
+.store-title-content{
+  font-size: 6rem;
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.store-title-img{
+  background-image: url("/Users/roy/Development/Projects/Aguamar/react-front-end/src/images/shop-img.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+   background-size: cover;
+}
+
+@media screen and (max-width:880px) {
+  #store-title-section{
+    grid-template-columns: auto;
+    grid-template-rows: 1fr 2fr;
+  }
+}
+
+
+/* featured swimsuits section(grid) */
+
+#featured-swimsuits-section{
+  text-align: center;
+  margin: 1rem auto;
+  display: grid;
+  height: 72vh;
+  width: fit-content;
+  gap: 4rem;
+  grid-template-columns:  1fr ;
+  grid-template-rows: 1fr 2fr;
+  grid-auto-columns: minmax(25% , 50%);
+  
+}
+
+.featured-title{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  grid-column-start: span 2;
+}
+
+
+
 
 /* ***********  *********** *********** *********** Footer *********** *********** *********** *********** ************/
 
