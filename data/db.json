@@ -1,0 +1,36 @@
+{
+
+    "womenProducts" : [
+        {
+            "id": "sol-superhero", 
+            "title": "SOL", 
+            "print" : "ALOHA", 
+            "price" : 300
+        },
+        {
+            "id": 2, 
+            "title": "SOL", 
+            "print" : "SUPERHERO", 
+            "price" : 300
+        }
+
+
+        
+    ],
+
+    "menProducts":[
+        {
+            "id": "jammer-lazer", 
+            "title": "JAMMER", 
+            "print" : "LAZER", 
+            "price" : 250
+        },
+        {
+            "id": 4, 
+            "title": "JAMMER", 
+            "print" : "LANE", 
+            "price" : 250
+        }
+
+    ]
+}
