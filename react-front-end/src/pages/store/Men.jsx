@@ -1,21 +1,17 @@
 import React from 'react'
 import { useLoaderData } from 'react-router-dom';
 import { Link } from 'react-router-dom';
+import Store from '../../components/Store';
+
+
+
 export default function Men() {
 const menProducts = useLoaderData();
 
   return (
-    <div className='men'>
-    <h1> Men </h1>
-    <div className='men-products'></div>
-    {menProducts.map(product => (
-      <div className='men-product' key={product.id}>
-         <Link to={`/store/${product.id}`}><h3> {product.title}</h3></Link> 
-          <h4> {product.print} </h4>
-          <p>{product.price}</p>
-            </div>
-    ))}
-    </div>
+   <Store
+    products={menProducts}
+   />
   )
 }
 

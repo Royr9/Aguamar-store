@@ -14,32 +14,32 @@ export default function RootLayout() {
         <header>
         <nav className='navbar navbar-expand-lg '>
         <NavLink className="navbar-brand shown-navs" to={'/'}> Aguamar  </NavLink>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
+        <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <button className="navbar-toggler-icon"></button>
         </button>
 
-         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+         <div className="collapse navbar-collapse" id="navbarSupportedContent">
+         <ul className="navbar-nav me-auto mb-2 mb-lg-0">
          <li className="nav-item">
          <NavLink className="nav-link shown-navs" to={'/'}>About</NavLink>
          </li>
-         <li class="nav-item dropdown">
+         <li className="nav-item dropdown">
          <NavLink  className="nav-link dropdown-toggle shown-navs" to={'/store'} role="button" data-bs-toggle="dropdown" aria-expanded="false"> Shop</NavLink>
          
-         <ul class="dropdown-menu">
+         <ul className="dropdown-menu">
          <li><Link className="dropdown-item" to={'/store'}>Store</Link></li>
 
-            <li><NavLink className="dropdown-item" to={'/store/men'}>Men</NavLink></li>
-            <li><NavLink className="dropdown-item"  to={'/store/women'}>women</NavLink> </li>
+            <li><NavLink className="dropdown-item" to={'/store?filter=Men'}>Men</NavLink></li>
+            <li><NavLink className="dropdown-item"  to={'/store?filter=Women'}>Women</NavLink> </li>
           </ul>
          </li>
         
 
          </ul>
         </div>
-         <Form class="d-flex search" role="search">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
-        <button class="btn btn-outline-primary" type="submit">Search</button>
+         <Form className="d-flex search" role="search">
+        <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
+        <button className="btn btn-outline-primary" type="submit">Search</button>
       </Form>
         </nav>
         
@@ -54,7 +54,9 @@ export default function RootLayout() {
         
 
 
-        <footer className='container'>
+        <footer >
+        <div className='container' >
+     
         <div className='row'>
           <div className='col-12  col-lg-4 policies '>
               <Link className='psuedo' > Shipping </Link>
@@ -86,7 +88,7 @@ export default function RootLayout() {
         </div>
         <hr style={{color:"black"}}/>
         <p style={{textAlign: "center"}} className='copyright'>Copyright © 2023 Aguamar. All rights reserved.</p>
-
+        </div>
         </footer>
     </div>
   )

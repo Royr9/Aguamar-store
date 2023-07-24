@@ -1,7 +1,8 @@
 /* colors */
 :root{
   --primary: rgb(71, 172, 158); 
-  --navBackground: rgb(163, 203, 238)
+  --navBackground: rgb(201, 217, 242);
+  --mediaSize: 880px;
 }
 
 /* elements ************** */
@@ -17,29 +18,28 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: rgb(209, 227, 244);
+  background-color: rgb(255, 255, 255);
 }
 
 
-select {
-  margin-bottom: 10px;
-  margin-top: 10px;
-  outline: 0;
-  background: #070707;
-  color: #fff;
-  border: 1px solid crimson;
-  padding: 4px;
-  border-radius: 9px;
-}
+
 /* all links no underline */
 a{
   text-decoration: none;
   color: #070707;
 }
+li{
+  text-align: left;
+  list-style: none;
+  margin: 0.5rem auto;
+}
 
+/* cancel the auto active styles */
 
-
-
+.dropdown-item.active{
+  background-color: #fff;
+  color: #070707;
+}
 /* ********** */
 
 /********************************* custom defined elements ******************************/
@@ -47,6 +47,19 @@ a{
 /* all page dynamic responsive container  */
 .page-container{
  margin-top: 6rem ;
+}
+
+/* section title font sizes */
+.section-title{
+  font-size: 4rem;
+  margin-bottom: 4rem;
+  text-align: center;
+}
+
+@media screen and (max-width: 880px) {
+  .section-title{
+    font-size: 7vw;
+  }
 }
 
 .btn:hover{
@@ -60,18 +73,191 @@ a{
   box-shadow: 2px black;
 }
 
+/******* components  *******/
+
+
+/* ProductCard */
 .product-card{
 border: solid 1px;
-width: 400px;
-max-width: 400px ;
+width: fit-content;
+height: fit-content;
+text-align: center;
+background-color: white;
+opacity: 0.9;
+
+}
+.product-card:hover{
+  opacity: 1;
 }
 
-.product-card > img{
-max-height: 400px;
+
+.product-card img{
+  max-height: 35vw;
 object-fit: contain;
 margin-bottom: 1rem;
 }
+@media screen and (max-width: 926px) {
+  .product-card img{
+    max-height: 40vw;
+  }
+}
 
+
+@media screen and (min-width:1300px) {
+  .product-card img{
+    max-height: 25vw;
+
+  }
+}
+
+@media screen and (max-width:659px) {
+  .product-card img{
+    max-height: 62vw;
+
+  }
+}
+
+
+
+
+/* ProductGallery */
+
+.product-gallery-comp{
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  box-sizing: border-box;
+}
+
+.arrow-btn{
+  cursor: pointer;
+  background-color: #fff;
+  border: none;
+ flex-basis: auto;
+}
+
+
+@media screen and (max-width: 880px) {
+  .product-gallery-comp{
+    
+  }
+}
+
+/********** store ****************/
+
+/* Store page(grid) */
+
+#store-page{
+  margin: 3rem ;
+  text-align: center;
+  font-size: larger;
+}
+
+
+.store-page-grid{
+display: grid;
+height: fit-content;
+max-width: 90vw;
+gap: 2rem;
+margin: 3rem auto;
+grid-template-columns: minmax(140px, 15vw) repeat(3, auto);
+grid-template-rows: 1fr ;
+grid-auto-rows: auto;
+}
+
+
+
+.store-product{
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+
+
+/* products and grid media  */
+.store-product .product-card img{
+  max-height: 27vw;
+}
+@media screen and (max-width:1100px) {
+  .store-product .product-card img{
+    max-height: 35vw;
+  }
+  .store-page-grid{
+    grid-template-columns:minmax(140px, 15vw) repeat(2, auto) ;
+  }
+}
+
+
+@media screen and (min-width:1300px) {
+  .store-product .product-card img{
+    max-height: 25vw;
+
+  }
+}
+
+
+
+@media screen and (max-width:600px) {
+  .store-product .product-card img{
+    max-height: 30vw;
+
+  }
+}
+
+
+menu{
+  margin-top: 0;
+}
+
+
+.sort-bar{
+  grid-area: 1/1/-5/1;
+  padding: 0;
+}
+
+.sort-bar h4{
+  text-align: left;
+  margin-left: 1rem;
+}
+
+.sort-bar > li{
+  
+  list-style: none;
+  margin: 1.5rem 1rem;
+  display: flex;
+  justify-content: left;
+  gap: 1rem;
+  
+
+}
+li > button{
+ color: rgb(54, 51, 46);
+ margin-left: auto;
+border: none;
+background-color: #fff;
+
+}
+
+
+.sort-bar ul{
+  padding-left: 0;
+  margin-left: 1rem;
+  font-size: smaller;
+  
+}
+
+li > input[type="checkbox"]{
+  margin-right: 0.7rem;
+}
+
+
+
+
+
+
+/* endd ***********/
 
 
 /******************************************* navbar *************************************************************/
@@ -165,7 +351,8 @@ header{
 /* content */
 .title-section-grid{
   display: grid;
-  height: 70vh;
+  height: 80vh;
+padding: 1rem;
   margin: 1rem 1rem;
   grid-template-columns: 1.5fr 1fr  ;
   grid-template-rows:  2.2fr 1fr ;
@@ -217,7 +404,7 @@ margin-bottom: 5rem;
   background-image: url("/Users/roy/Development/Projects/Aguamar/react-front-end/src/images/title-img.png");
   background-repeat: no-repeat;
   background-position: center;
-   background-size: cover;
+   background-size: contain;
   grid-row: span 2;
   order: -1;
 }
@@ -225,11 +412,12 @@ margin-bottom: 5rem;
 
 /* media query  */
 
-@media screen and (max-width:880px) {
+@media screen and (max-width:920px) {
   .title-section-grid{
     height: fit-content;
     grid-template-columns: auto ;
     grid-template-rows: 1fr 2fr 1fr;
+    
     
   }
   .title-content{
@@ -239,6 +427,7 @@ margin-bottom: 5rem;
   .title-img{
     order: 0;
     grid-area: 2/1/2/1;
+    background-size: contain;
   }
   .shop-now-btn{
     order: 1;
@@ -250,15 +439,83 @@ margin-bottom: 5rem;
   
 }
 
+/* featured swimsuits section(grid) */
 
 
-/** end /** end ** *//** end ** *//** end ** *//** end ** *//** end ** /** end ** */
 
-/************** Store layout page  *******************************/
+
+/* men/women store section (grid)*/
+#men-women-section{
+  margin: 6rem auto;
+}
+
+
+
+.men-women-section{
+  margin: 3rem auto;
+display: grid;
+height:80vh;
+gap: 0.5rem;
+grid-template-columns: 1fr 1fr;
+grid-template-rows: auto;
+}
+
+.men-women-section > *{
+display: flex;
+justify-content: center;
+align-items: center;
+background-position: center;
+background-size: cover;
+background-repeat: no-repeat;
+}
+
+.men-women-section > .men{
+background-image: url("./images/men-image.jpg");
+}
+
+.men-women-section > .women{
+  background-image: url("./images/women-image.jpg");
+}
+
+.men-women-section .btn{
+  width: 10rem;
+  font-size: 1.5rem;
+  background-color: rgba(236, 238, 238, 0.731);
+  color: rgba(49, 106, 126, 0.881);
+
+}
+
+.men-women-section .btn:hover{
+  background-color: rgba(55, 115, 114, 0.858);
+  color: rgb(237, 238, 238);
+
+}
+
+
+/* media query  */
+
+@media screen and (max-width: 926px){
+  .men-women-section{
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    height: 160vh;
+    background-size: contain;
+    
+  }
+}
+
+
+
+
+
+
+/** end OF HOME PAGE /** end ** *//** end ** *//** end ** *//** end ** *//** end ** /** end ** */
+
+/************** Store layout  *******************************/
 
 /* store-title-section (grid)*/
 #store-title-section{
-  background-color: #979797;
+  background-color: #ececec;
   display: grid;
   height: 60vh;
   grid-template-columns: 1.2fr minmax(700px ,1.8fr);
@@ -280,7 +537,7 @@ margin-bottom: 5rem;
    background-size: cover;
 }
 
-@media screen and (max-width:880px) {
+@media screen and (max-width:926px) {
   #store-title-section{
     grid-template-columns: auto;
     grid-template-rows: 1fr 2fr;
@@ -288,37 +545,79 @@ margin-bottom: 5rem;
 }
 
 
-/* featured swimsuits section(grid) */
 
-#featured-swimsuits-section{
-  text-align: center;
-  margin: 1rem auto;
+/* product page */
+
+.product-page{
+  margin: 3rem auto;
+}
+
+/* product detail +  image grid */
+
+.product-details{
+  
+  margin: auto 20vw;
   display: grid;
-  height: 72vh;
-  width: fit-content;
-  gap: 4rem;
-  grid-template-columns:  1fr ;
-  grid-template-rows: 1fr 2fr;
-  grid-auto-columns: minmax(25% , 50%);
+  grid-template-columns: 1fr 1fr;
   
 }
 
-.featured-title{
+
+
+.product-details-image img{
+  max-height: 40vw;
+
+}
+
+.product-details-form{
+  font-size: 1.5vw;
+  margin: 2vw 2vw; 
+  text-align: left;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  
-  grid-column-start: span 2;
+  flex-direction: column;
+  gap: 1vw;
 }
 
 
+.product-details-form input{
+  width: 4vw;
+  text-align: center;
+}
 
+.buy-now{
+font-size: 1.5vw;
+}
 
+.cart-icon{
+  color: #070707;
+}
+
+@media screen and (max-width: 700px) {
+  .product-details-image img{
+    max-height: 50vw;
+  }
+  .product-details-form{
+    font-size: 2vw;
+  }
+  .product-details{
+   margin: auto 10vw;
+  }
+  .buy-now{
+    font-size: 2.5vw;
+    }
+    .product-details-form input{
+      width: 7vw;
+      
+    }
+}
 /* ***********  *********** *********** *********** Footer *********** *********** *********** *********** ************/
 
 
 footer{
   margin-top: 3rem;
+  padding: 1rem;
+  background-color: var(--navBackground);
+  
 }
 
 .col{

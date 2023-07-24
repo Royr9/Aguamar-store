@@ -1,17 +1,77 @@
 {
 
-    "womenProducts" : [
+
+    "products" : [
         {
-            "id": "sol-superhero", 
-            "title": "SOL", 
-            "print" : "ALOHA", 
-            "price" : 300
+            "id": "sol-aloha", 
+            "title": "Sol", 
+            "gender": "Women",
+            "print" : "Aloha", 
+            "price" : 295
         },
         {
-            "id": 2, 
-            "title": "SOL", 
+            "id": "sol-phoenix", 
+            "title": "Sol", 
+            "gender": "Women",
+            "print" : "Phoenix", 
+            "price" : 295
+        },
+        {
+            "id": "sol-superhero", 
+            "title": "Sol", 
+            "gender": "Women",
+            "print" : "Superhero", 
+            "price" : 295
+        },
+         {
+            "id": "so-laser", 
+            "title": "So", 
+            "gender": "Men",
+            "print" : "Laser", 
+            "price" : 210
+        },
+       
+        {
+            "id": "so-phoenix", 
+            "title": "So", 
+            "gender": "Men",
+            "print" : "Phoenix", 
+            "price" : 210
+        },
+        {
+            "id": "so-matrix", 
+            "title": "So", 
+            "gender": "Men",
+            "print" : "Matrix", 
+            "price" : 210
+        }
+        
+
+        
+    ],
+
+
+    "womenProducts" : [
+        {
+            "id": "sol-aloha", 
+            "title": "Sol", 
+            "gender": "Women",
+            "print" : "Aloha", 
+            "price" : 295
+        },
+        {
+            "id": "sol-superhero", 
+            "title": "Sol", 
+            "gender": "Women",
             "print" : "SUPERHERO", 
-            "price" : 300
+            "price" : 295
+        },
+        {
+            "id": "sol-phoenix", 
+            "title": "Sol", 
+            "gender": "Women",
+            "print" : "PHOENIX", 
+            "price" : 295
         }
 
 
@@ -20,17 +80,64 @@
 
     "menProducts":[
         {
-            "id": "jammer-lazer", 
-            "title": "JAMMER", 
-            "print" : "LAZER", 
-            "price" : 250
+            "id": "so-laser", 
+            "title": "So", 
+            "gender": "Men",
+            "print" : "LASER", 
+            "price" : 210
         },
         {
-            "id": 4, 
-            "title": "JAMMER", 
-            "print" : "LANE", 
-            "price" : 250
+            "id": "so-phoenix", 
+            "title": "So", 
+            "gender": "Men",
+            "print" : "PHOENIX", 
+            "price" : 210
+        },
+        {
+            "id": "so-matrix", 
+            "title": "So", 
+            "gender": "Men",
+            
+            "print" : "MATRIX", 
+            "price" : 210
         }
+
+    ],
+
+    "featuredProducts": [
+        {
+            "id": "sol-phoenix", 
+            "title": "Sol", 
+            "print" : "PHOENIX", 
+            "price" : 295
+        },        {
+            "id": "so-laser", 
+            "title": "So", 
+            
+            "print" : "LASER", 
+            "price" : 210
+        },
+        {
+            "id": "so-phoenix", 
+            "title": "So", 
+            "print" : "PHOENIX", 
+            "price" : 210
+        },
+        {
+            "id": "sol-aloha", 
+            "title": "Sol", 
+            "print" : "ALOHA", 
+            "price" : 295
+        },
+        {
+            "id": "sol-superhero", 
+            "title": "Sol", 
+            "print" : "SUPERHERO", 
+            "price" : 300
+        }
+        
+
+
 
     ]
 }
