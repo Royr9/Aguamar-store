@@ -4,8 +4,8 @@ import { createBrowserRouter ,Route, createRoutesFromElements, RouterProvider } 
 import Home from "./pages/Home";
 import RootLayout from "./layouts/RootLayout";
 import StoreLayout from "./layouts/StoreLayout";
-import Men, { menProductsLoader } from "./pages/store/Men";
-import Women, { womenProductsLoader } from "./pages/store/Women";
+// import Men, { menProductsLoader } from "./pages/store/Men";
+// import Women, { womenProductsLoader } from "./pages/store/Women";
 import NotFound from "./pages/error-pages/NotFound";
 import ProductPage, { buyFormAction, productPageLoader } from "./pages/store/ProductPage";
 import NoProductFound from "./pages/error-pages/NoProductFound";

@@ -33,3 +33,7 @@ yarn.lock
 *.swp
 *.swo
 *.DS_Store
+
+# ignore vs code configuration to show files ending with .jsx as react files
+.vscode
+data

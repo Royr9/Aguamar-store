@@ -1,10 +1,16 @@
 import React, { useState } from 'react';
-import { useLoaderData } from 'react-router-dom';
+// import { useLoaderData } from 'react-router-dom';
+import Db from '../Db';
 
 import Store from '../components/Store';
 
+
+
 export default function MainStore() {
-    const products = useLoaderData();
+  const dbProducts = Db();
+ 
+  const products = dbProducts.products;
+  
 
     return(
 <Store
@@ -18,12 +24,14 @@ export default function MainStore() {
 
 export async function mainStoreLoader() {
   
-    const response = await fetch ("http://localhost:4000/products"); 
+    // const response = await fetch ("http://localhost:4000/products"); 
     
-    if (response.ok) {
+    // if (response.ok) {
       
-      return response.json();
-    } else {
-      throw Error("Failed to fetch products.");
-    }
+    //   return response.json();
+    // }
+    //  else {
+    //   throw Error("Failed to fetch products.");
+    // }
+    return null
     }

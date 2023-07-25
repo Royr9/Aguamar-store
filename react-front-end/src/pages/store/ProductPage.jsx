@@ -1,10 +1,14 @@
 import React from 'react'
 import { useLoaderData, useParams, Form, redirect, useActionData } from 'react-router-dom';
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
+import Db from '../../Db';
 
 export default function ProductPage() {
     const { id } = useParams();
-    const product = useLoaderData();
+  
+    const dataBase = Db();
+   const product = dataBase.products.find(product => product.id === id);
+    // const product = useLoaderData();
     const sizeError = useActionData();
    
   return (
@@ -52,16 +56,18 @@ export default function ProductPage() {
 
 
 export async function productPageLoader({params}) {
-    const {id} = params;
+    // const {id} = params;
 
+     
 
-    const res = await fetch("http://localhost:4000/Products/" + id)
+    // const res = await fetch("http://localhost:4000/Products/" + id)
 
-    if (res.ok) {
-        return res.json();
-    }else {
-            throw  Error("Could not find this product");
-        }
+    // if (res.ok) {
+    //     return res.json();
+    // }else {
+    //         throw  Error("Could not find this product");
+    //     }
+    return null
     }
 
 

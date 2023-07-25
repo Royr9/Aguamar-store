@@ -2,18 +2,17 @@
 import React, { useState } from 'react';
 import {Link, NavLink, Navigate, Outlet } from 'react-router-dom';
 import { useLoaderData } from 'react-router-dom';
-import ProductCard from '../components/ProductCard';
-import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
-import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
+
 import ProductsGallery from '../components/ProductsGallery';
+import Db from '../Db';
 
 
 
 function Home() {
-
-    const featuredSuits = useLoaderData();
+    const dataBase = Db();
+    const featuredSuits = dataBase.featuredProducts;
  
-
+    
    
     return(
      <div className="home-page">
@@ -61,19 +60,19 @@ export default Home;
 
 export async function featuredProductsLoader() {
   
-    const response = await fetch("http://localhost:4000/featuredProducts");
+    // const response = await fetch("http://localhost:4000/featuredProducts");
     
-    // const wResponse = await fetch("http://localhost:4000/womenProducts/sol-superhero");
+    // // const wResponse = await fetch("http://localhost:4000/womenProducts/sol-superhero");
     
-    // const menSuit = await mResponse.json();
+    // // const menSuit = await mResponse.json();
     
-    // const womenSuit = await wResponse.json();
+    // // const womenSuit = await wResponse.json();
     
-    // const featuredProducts = [menSuit, womenSuit];
+    // // const featuredProducts = [menSuit, womenSuit];
     
-    if (response.ok) {
-      return response.json();
-    }
-    
+    // if (response.ok) {
+    //   return response.json();
+    // }
+    return null
     }
     
