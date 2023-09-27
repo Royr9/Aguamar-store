@@ -9,6 +9,7 @@ product-gallery(carousel)
 Product card
 Product Store 
 
-Project Website URL: https://aguamaril.onrender.com/
-wix website URL: aguamaril.com
+Project Website URL: https://aguamaril.onrender.com
+
+Wix website URL: https://www.aguamaril.com
 
